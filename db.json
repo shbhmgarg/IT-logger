@@ -1,25 +1,18 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "Changed hard drive on workstation 005",
-      "attention": false,
-      "date": "03-02-2019",
-      "tech": "Sam Smith"
-    },
-    {
-      "id": 2,
-      "message": "Workstation 007 not posting",
+      "message": "Testing Log 1",
       "attention": true,
-      "date": "03-02-2019",
-      "tech": "John Doe"
+      "tech": "John Doe",
+      "data": "2021-12-10T18:00:13.195Z",
+      "id": 1
     },
     {
-      "id": 3,
-      "message": "Changed memory on workstation 050",
-      "attention": false,
-      "date": "03-02-2019",
-      "tech": "Sara Wilson"
+      "message": "Camera not working on personal machine",
+      "attention": true,
+      "tech": "Sara Smith",
+      "data": "2021-12-10T18:00:27.545Z",
+      "id": 2
     }
   ],
   "techs": [

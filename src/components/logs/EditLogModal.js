@@ -21,7 +21,7 @@ const EditLogModal = () => {
   };
 
   return (
-    <div id='add-log-modal' className='modal' style={modalStyle}>
+    <div id='edit-log-modal' className='modal' style={modalStyle}>
       <div className='modal-content'>
         <h4>Edit System Log</h4>
         <div className='row' style={{ 'marginTop' : '20px' }}>
