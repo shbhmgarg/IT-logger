@@ -9,6 +9,7 @@ import {
 export const addTech = (tech) => {
   return async (dispatch) => {
     try {
+      console.log(tech);
       setLoading();
 
       const res = await fetch("/techs", {
