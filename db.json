@@ -1,18 +1,11 @@
 {
   "logs": [
     {
-      "message": "Testing Log 1",
-      "attention": true,
-      "tech": "John Doe",
-      "data": "2021-12-10T18:00:13.195Z",
+      "message": "Testin",
+      "attention": false,
+      "tech": "Sara Wilson",
+      "data": "2021-12-10T18:19:04.933Z",
       "id": 1
-    },
-    {
-      "message": "Camera not working on personal machine",
-      "attention": true,
-      "tech": "Sara Smith",
-      "data": "2021-12-10T18:00:27.545Z",
-      "id": 2
     }
   ],
   "techs": [
