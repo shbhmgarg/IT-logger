@@ -1,11 +1,18 @@
 {
   "logs": [
     {
-      "message": "Testin",
+      "id": 1,
+      "message": "completed dsc",
+      "tech": "John Doe",
       "attention": false,
-      "tech": "Sara Wilson",
-      "data": "2021-12-10T18:19:04.933Z",
-      "id": 1
+      "date": "2021-12-10T18:50:43.605Z"
+    },
+    {
+      "id": 2,
+      "message": "another log testing",
+      "tech": "John Doe",
+      "attention": false,
+      "date": "2021-12-10T18:48:26.202Z"
     }
   ],
   "techs": [

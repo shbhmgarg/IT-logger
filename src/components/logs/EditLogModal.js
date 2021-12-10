@@ -1,21 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import M from "materialize-css/dist/js/materialize.min.js";
+import { connect } from "react-redux";
+import { updateLog } from "../../actions/logActions";
+import PropTypes from "prop-types";
 
-const EditLogModal = () => {
+const EditLogModal = ({ log: { current }, updateLog }) => {
   const [message, setMessage] = useState("");
   const [attention, setAttention] = useState(false);
   const [tech, setTech] = useState("");
+  const messageField = useRef(message);
+
+  useEffect(() => {
+    if (current !== null) {
+      setMessage(current.message);
+      setTech(current.tech);
+      setAttention(current.attention);
+      messageField.current.focus();
+    }
+  }, [current]);
 
   const onSubmit = (e) => {
     e.preventDefault();
     if (message === "" || tech === "") {
       M.toast({ html: "Please enter a message and Technician " });
     } else {
-      console.log(message, tech, attention);
+      const updatedLog = {
+        id: current.id,
+        message,
+        tech,
+        attention,
+        date: new Date(),
+      };
+
+      updateLog(updatedLog);
+      M.toast({ html : 'Log updated successfully!!'})
 
       // Clear Fields
-      setTech('');
-      setMessage('');
+      setTech("");
+      setMessage("");
       setAttention(false);
     }
   };
@@ -24,9 +46,10 @@ const EditLogModal = () => {
     <div id='edit-log-modal' className='modal' style={modalStyle}>
       <div className='modal-content'>
         <h4>Edit System Log</h4>
-        <div className='row' style={{ 'marginTop' : '20px' }}>
+        <div className='row' style={{ marginTop: "20px" }}>
           <div className='input-field'>
             <input
+              ref={messageField}
               type='text'
               name='message'
               value={message}
@@ -97,4 +120,13 @@ const modalStyle = {
   height: "75%",
 };
 
-export default EditLogModal;
+EditLogModal.propTypes = {
+  log: PropTypes.object.isRequired,
+  updateLog: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  log: state.log,
+});
+
+export default connect(mapStateToProps, { updateLog })(EditLogModal);
