@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import M from "materialize-css/dist/js/materialize.min.js";
 import { connect } from "react-redux";
-import { updateLog } from "../../actions/logActions";
+import { updateLog, clearCurrent } from "../../actions/logActions";
 import PropTypes from "prop-types";
 
-const EditLogModal = ({ log: { current }, updateLog }) => {
+const EditLogModal = ({ log: { current }, updateLog, clearCurrent }) => {
   const [message, setMessage] = useState("");
   const [attention, setAttention] = useState(false);
   const [tech, setTech] = useState("");
@@ -34,7 +34,7 @@ const EditLogModal = ({ log: { current }, updateLog }) => {
 
       updateLog(updatedLog);
       M.toast({ html : 'Log updated successfully!!'})
-
+      clearCurrent();
       // Clear Fields
       setTech("");
       setMessage("");
@@ -129,4 +129,4 @@ const mapStateToProps = (state) => ({
   log: state.log,
 });
 
-export default connect(mapStateToProps, { updateLog })(EditLogModal);
+export default connect(mapStateToProps, { updateLog, clearCurrent })(EditLogModal);

@@ -7,6 +7,7 @@ import {
   SET_CURRENT,
   CLEAR_CURRENT,
   UPDATE_LOG,
+  SEARCH_LOGS,
 } from "./types";
 
 export const addLog = (log) => {
@@ -76,8 +77,6 @@ export const updateLog = (log) => {
         type: UPDATE_LOG,
         payload: data,
       });
-
-      clearCurrent();
     } catch (err) {
       dispatch({
         type: LOGS_ERROR,
@@ -109,6 +108,27 @@ export const deleteLog = (logId) => {
   };
 };
 
+// Search Logs
+export const searchLogs = (text) => {
+  return async (dispatch) => {
+    try {
+      setLoading();
+      const res = await fetch(`/logs/?q=${text}`);
+      const data = await res.json();
+
+      dispatch({
+        type: SEARCH_LOGS,
+        payload: data,
+      });
+    } catch (err) {
+      dispatch({
+        type: LOGS_ERROR,
+        payload: err.response.data,
+      });
+    }
+  };
+};
+
 // Set current log on editing
 export const setCurrent = (log) => {
   return async (dispatch) => {
@@ -121,7 +141,6 @@ export const setCurrent = (log) => {
 
 // Clear current log
 export const clearCurrent = () => {
-  console.log('hi')
   return{
     type: CLEAR_CURRENT
   }
