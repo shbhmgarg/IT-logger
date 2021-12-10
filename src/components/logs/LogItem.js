@@ -10,7 +10,7 @@ const LogItem = ({ log, deleteLog, setCurrent }) => {
   const removeLog = (e) => {
     e.preventDefault();
     deleteLog(log.id);
-    M.toast({ html: `log deleted successfully`});
+    M.toast({ html: `Log ID #${log.id} deleted successfully`});
   }
 
   const setCurrentLog = (e) => {

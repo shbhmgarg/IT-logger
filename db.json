@@ -1,31 +1,21 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "completed",
-      "tech": "John Doe",
-      "attention": false,
-      "date": "2021-12-10T18:53:44.555Z"
+      "message": "Camera Broken",
+      "attention": true,
+      "tech": "Shubham Garg",
+      "data": "2021-12-10T19:48:48.558Z",
+      "id": 3
     },
     {
-      "id": 2,
-      "message": "another log testing",
-      "tech": "John Doe",
+      "id": 4,
+      "message": "Fixed hard drive on workstation 365",
+      "tech": "Ananya Sharma",
       "attention": false,
-      "date": "2021-12-10T18:48:26.202Z"
+      "date": "2021-12-10T19:52:11.760Z"
     }
   ],
   "techs": [
-    {
-      "id": 1,
-      "firstName": "John",
-      "lastName": "Doe"
-    },
-    {
-      "id": 2,
-      "firstName": "Sam",
-      "lastName": "Smith"
-    },
     {
       "firstName": "Shubham",
       "lastName": "Garg",
@@ -35,6 +25,11 @@
       "firstName": "Ananya",
       "lastName": "Sharma",
       "id": 5
+    },
+    {
+      "firstName": "Aditya",
+      "lastName": "Shukla",
+      "id": 6
     }
   ]
 }
